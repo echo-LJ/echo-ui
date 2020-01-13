@@ -1,0 +1,56 @@
+@import (reference) "../../lib/mixins/variables.mixin.less";
+// @description: 按钮组件
+// @author: EBo
+// @update: Lujing (2018-04-25)
+@borderWidth: 1px;
+
+@btn-cls: ~'v-button-group';
+
+.@{btn-cls} {
+  
+  display: inline-block;
+  vertical-align: middle;
+  position: relative;
+  font-size: 0;
+  
+  .v-button{
+    position: relative;
+    &:hover{
+      z-index: 1;
+    }
+  }
+  .v-button:not(:first-of-type):not(:last-of-type){
+    border-radius: 0;
+  }
+
+  &.horizontal{
+    .v-button:first-of-type{
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .v-button:last-of-type{
+      border-top-left-radius: 0;
+      border-bottom-left-radius: 0;
+    }
+    .v-button + .v-button{
+      margin-left: -1 * @borderWidth;
+    }
+  }
+  
+  &.vertical{
+    .v-button{
+      display: block;
+    }
+    .v-button:first-of-type{
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
+    .v-button:last-of-type{
+      border-top-left-radius: 0;
+      border-top-right-radius: 0;
+    }
+    .v-button + .v-button{
+      margin-top: -1 * @borderWidth;
+    }
+  }
+}

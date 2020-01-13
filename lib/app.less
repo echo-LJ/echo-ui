@@ -1,0 +1,252 @@
+@import (reference) "./mixins/variables.mixin.less";
+@app-main-color: @text-color;
+@content-list-item-font-size: 14px;
+@content-list-item-padding-top: 14px;
+@content-list-item-padding-left: @page-padding-left;
+@content-list-item-line-height: 20px;
+#app {
+    font-family: 'Avenir', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    color: @app-main-color;
+    height: 100%;
+}
+
+html,
+body {
+    background-color: @page-background-color;
+    height: 100%;
+    overflow: hidden;
+}
+
+blockquote {
+    margin: 0;
+}
+
+a {
+    color: @light-green;
+}
+
+.shadow-transition {
+    transition: box-shadow 200ms ease-in-out;
+}
+
+.page-header-container {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+}
+
+.page-body-container {
+    box-sizing: border-box;
+    height: 100%;
+    padding-top: @page-header-height;
+}
+
+.content-view {
+    height: 100%;
+    display: flex;
+    align-items: stretch;
+}
+
+.content-list {
+    width: @sidebar-width;
+    flex-shrink: 0;
+    padding: @content-list-item-padding-top 0;
+    box-shadow: 0 0 1px @light-shadow-color;
+    overflow-x: hidden;
+    overflow-y: auto;
+    .hide-scrollbar;
+}
+
+.content-list-group-title {
+    cursor: default;
+    opacity: .7;
+    padding: @content-list-item-padding-top / 2 @content-list-item-padding-left;
+}
+
+.content-list-item {
+    font-size: @content-list-item-font-size;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    text-decoration: none;
+    padding: @content-list-item-padding-top @content-list-item-padding-left;
+    color: @text-color;
+    transition: background-color 200ms ease-in-out, border-color 200ms ease-in-out, color 200ms ease-in-out;
+    border-right: 2px solid transparent;
+    box-sizing: border-box;
+    width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    &:hover {
+        background-color: @light-background-color
+    }
+    &.router-link-active {
+        color: @light-green;
+        border-right-color: @light-green;
+    }
+}
+
+.content-list-item-icon {
+    font-size: .8em;
+    margin-right: .5em;
+    flex-shrink: 0;
+}
+
+.content-list-item-label {
+    flex-grow: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.content-body {
+    flex-grow: 1;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+.content-body-inner {
+    padding: @content-padding-top @content-padding-left @content-padding-bottom @content-padding-left;
+}
+
+@input-bg-color: @white;
+@input-border-color: @border-color;
+@input-placeholder-color: #bbbec4;
+// .v-input-container{
+// }
+// .v-input{
+//   display: inline-block;
+//   box-sizing: border-box;
+//   width: 100%;
+//   height: 2em;
+//   line-height: 1.5;
+//   padding: 1/12em 2/3em;
+//   border: 1px solid @input-border-color;
+//   border-radius: .25em;
+//   background-color: @input-bg-color;
+//   transition: border-color 240ms, box-shadow 240ms;
+//   &:hover{
+//     border-color: @light-blue;
+//   }
+//   &:focus{
+//     border-color: @light-blue;
+//     box-shadow: 0 0 0 2px fadeout(@light-blue, 80%);
+//   }
+//   &::-webkit-input-placeholder {
+//     color: @input-placeholder-color;
+//   }
+// }
+
+.f-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-flex-outer {
+    position: relative;
+}
+.f-flex-inner {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+.f-flex-col-center {
+    display: flex;
+    align-items: center;
+}
+
+.f-flex-row-center {
+    display: flex;
+    justify-content: center;
+}
+
+
+.f-flex-end {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.f-flex-center-align {
+    display: flex;
+    align-items: center;
+}
+
+.f-flex-center-align-start {
+    display: flex;
+    align-items: flex-start;
+}
+
+.f-flex-row-round {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+.f-flex-column-space {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.f-flex-item {
+    flex: 1;
+    flex-shrink: 1;
+}
+
+.f-flex {
+    display: flex;
+}
+
+.f-flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.f-flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.f-flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+.f-flex-shrink-fix {
+    flex-shrink: 0;
+}
+
+.f-flex-double-space {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.f-flex-col-center {
+    display: flex;
+    align-items: center;
+}
+
+.f-inflex-center {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.f-inflex-col-center {
+    display: inline-flex;
+    align-items: center;
+}
+.f-inflex-column {
+    display: inline-flex;
+    flex-direction: column;
+}

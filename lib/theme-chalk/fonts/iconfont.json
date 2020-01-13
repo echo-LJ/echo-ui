@@ -1,0 +1,16 @@
+{
+  "id": "1610506",
+  "name": "echo-ui",
+  "font_family": "iconfont",
+  "css_prefix_text": "echo-icon",
+  "description": "基于vue 2.0 的组件库",
+  "glyphs": [
+    {
+      "icon_id": "432013",
+      "name": "spinner2",
+      "font_class": "spinner2",
+      "unicode": "e7e2",
+      "unicode_decimal": 59362
+    }
+  ]
+}

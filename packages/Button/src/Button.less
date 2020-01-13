@@ -1,0 +1,260 @@
+@import (reference) "../../../lib/mixins/variables.mixin.less";
+@import "../../../lib/theme-chalk/index.css";
+// @description: 按钮组件
+// @author: Echo
+
+@btn-default-font-size: 12px;
+
+@btn-large-padding: .5em 1.25em;
+@btn-default-padding: .5em 1.25em;
+@btn-small-padding: 1/6em 7/12em;
+@btn-mini-padding: 2px 5px;
+
+@btn-large-icon-padding: .5em;
+@btn-default-icon-padding: .5em;
+@btn-small-icon-padding: 1/6em;
+@btn-mini-icon-padding: 1px;
+
+@btn-text-icon-padding: 0;
+
+@btn-border-radius: 4px;
+
+@btn-bg-color: #f7f7f7;
+@btn-disabled-bg-color: @disable-color;
+@btn-hover-bg-color: @white;
+@btn-primary-bg-color: @active-color;
+@btn-success-bg-color: @success-color;
+@btn-info-bg-color: @info-color;
+@btn-warning-bg-color: @warning-color;
+@btn-error-bg-color: @error-color;
+@btn-light-bg-color: @white;
+
+@btn-border-color: @border-color;
+@btn-hover-border-color: @active-color;
+@btn-disabled-border-color: @border-color;
+@btn-primary-border-color: @active-color;
+@btn-success-border-color: @success-color;
+@btn-info-border-color: @info-color;
+@btn-warning-border-color: @warning-color;
+@btn-error-border-color: @error-color;
+@btn-light-border-color: @white;
+
+@btn-color: @text-color;
+@btn-hover-color: @active-color;
+@btn-disabled-color: @gray-4;
+@btn-primary-color: @white;
+@btn-success-color: @white;
+@btn-info-color: @white;
+@btn-warning-color: @white;
+@btn-error-color: @white;
+@btn-light-color: @text-color;
+@btn-cls: ~'v-button';
+
+@themeList: primary, success, info, warning, error, light;
+@listLength: length(@themeList);
+
+.generate-theme-css (@n, @i : 1) when (@i =< @n) {
+  @className: extract(@themeList, @i);
+  @btnColor: ~"btn-@{className}-color";
+  @btnBorderColor: ~"btn-@{className}-border-color";
+  @btnBgColor: ~"btn-@{className}-bg-color";
+
+  &.@{className} {
+    color: @@btnColor;
+    border-color: @@btnBorderColor;
+    background-color: @@btnBgColor;
+    &:hover{
+      border-color: lighten(@@btnBorderColor, 5%);
+      background-color: lighten(@@btnBgColor, 5%);
+    }
+    &:active, &.active{
+      border-color: darken(@@btnBorderColor, 5%);
+      background-color: darken(@@btnBgColor, 5%);
+    }
+
+    &.text{
+      color: @@btnBgColor;
+      border-color: transparent;
+      background-color: transparent;
+      &:hover{
+        color: lighten(@@btnBgColor, 5%);
+        border-color: transparent;
+        background-color: transparent;
+      }
+      &:active, &.active{
+        color: darken(@@btnBgColor, 5%);
+        border-color: transparent;
+        background-color: transparent;
+      }
+    }
+  }
+
+  .generate-theme-css(@n, (@i + 1));
+}
+
+.btn-disabled () {
+  // .g-form-disabled-cursor;
+  cursor: default;
+  color: @gray-4 !important;
+  background-color: @btn-disabled-bg-color !important;
+  border-color: @btn-disabled-border-color !important;
+}
+.text-btn-disabled () {
+  // .g-form-disabled-cursor;
+  cursor: default;
+  color: @btn-disabled-color !important;
+}
+
+.btn-loading () {
+  cursor: default;
+  pointer-events: none;
+  opacity: .6;
+}
+
+.@{btn-cls} {
+  font-size: @btn-default-font-size;
+  color: @btn-color;
+  display: inline-block;
+  line-height: 1.5;
+  border: 1px solid transparent;
+  white-space: nowrap;
+  text-align: center;
+  vertical-align: middle;
+  cursor: pointer;
+  user-select: none;
+  border-radius: @btn-border-radius;
+  background-color: @btn-bg-color;
+  border-color: @btn-border-color;
+  text-decoration: none !important;
+  transition: border-color 200ms ease-in-out, color 200ms ease-in-out, background-color 200ms ease-in-out;
+  box-sizing: content-box;
+  
+  [class^="icon-"] + *, [class*=" icon-"] + *{
+    margin-left: 1/3em;
+  }
+  &-loading{
+    margin-right: 1/3em;
+  }
+  &.icon{
+    .v-button-loading{
+      margin-right: 0;
+    }
+  }
+
+  > * {
+    display: inline-block;
+    vertical-align: top;
+  }
+
+  &.large{
+    padding: @btn-large-padding;
+    &.icon{
+      padding: @btn-large-icon-padding;
+      &.text{
+        padding: @btn-text-icon-padding;
+      }
+    }
+  }
+  &.default{
+    padding: @btn-default-padding;
+    &.icon{
+      padding: @btn-default-icon-padding;
+      &.text{
+        padding: @btn-text-icon-padding;
+      }
+    }
+  }
+  &.small{
+    padding: @btn-small-padding;
+    &.icon{
+      padding: @btn-small-icon-padding;
+      &.text{
+        padding: @btn-text-icon-padding;
+      }
+    }
+  }
+  &.mini{
+    padding: @btn-mini-padding;
+    line-height: 1;
+    &.icon{
+      padding: @btn-mini-icon-padding;
+      &.text{
+        padding: @btn-text-icon-padding;
+      }
+    }
+  }
+
+  &.icon > *{
+    line-height: 1;
+    font-size: 1.5em;
+  }
+  &.mini.icon > *{
+    font-size: 1em;
+  }
+
+  &.circle{
+    border-radius: 1.5em;
+  }
+
+  &:hover{
+    color: @btn-hover-color;
+    border-color: @btn-hover-border-color;
+    background-color: @btn-hover-bg-color;
+  }
+
+  &.ghost{
+    background-color: transparent;
+  }
+
+  &.text{
+    border-color: transparent;
+    background-color: transparent;
+  }
+
+  &.active, &:active{
+    color: darken(@btn-hover-color, 15%);
+  }
+
+  &.loading{
+    .btn-loading
+  }
+
+  // &.primary{
+  //   color: @btn-primary-color;
+  //   border-color: @btn-primary-bg-color;
+  //   background-color: @btn-primary-bg-color;
+  //   &:hover{
+  //     border-color: lighten(@btn-primary-border-color, 5%);
+  //     background-color: lighten(@btn-primary-bg-color, 5%);
+  //   }
+  //   &:active, &.active{
+  //     border-color: darken(@btn-primary-border-color, 5%);
+  //     background-color: darken(@btn-primary-bg-color, 5%);
+  //   }
+  // }
+  // 多主题使用循环生成
+  .generate-theme-css(@listLength);
+
+  &[disabled]:not(.text), &.disabled:not(.text){
+    .btn-disabled;
+  }
+  &.text[disabled], .text.disabled{
+    .text-btn-disabled;
+  }
+
+  &-loading-icon{
+    vertical-align: top;
+    animation: btn-loading 1.2s linear infinite;
+  }
+}
+
+
+
+@keyframes btn-loading{
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}

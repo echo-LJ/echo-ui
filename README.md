@@ -28,3 +28,20 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * git add .
 * git cz > 清楚的选择本次版本所做更改和描述
 * git push 
+
+### 项目引用的步骤
+
+* 安装
+```
+npm i echo-view-ui
+```
+* 使用
+
+```
+
+import EchoUI from "echo-view-ui";
+import "echo-view-ui/lib/theme-chalk/index.css";
+Vue.use(EchoUI);
+
+```
+
