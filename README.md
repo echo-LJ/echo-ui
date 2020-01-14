@@ -22,6 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+## 项目文档地址
+See [项目文档地址](https://lujinggirl.github.io/echo-ui/dist/).
 
 ### 提交代码的步骤
 
