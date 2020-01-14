@@ -6,6 +6,7 @@
 
 <script>
 export default {
+  name: 'EchoButtonGroup',
   props: {
     vertical: {
       required: false,
@@ -17,4 +18,4 @@ export default {
   }
 }
 </script>
-<style src="./vButtonGroup.less" lang="less"></style>
+<style src="./ButtonGroup.less" lang="less"></style>

@@ -40,7 +40,7 @@ npm i echo-view-ui
 ```
 
 import EchoUI from "echo-view-ui";
-import "echo-view-ui/lib/theme-chalk/index.css";
+import "echo-view-ui/dist/echo-view-ui.css";
 Vue.use(EchoUI);
 
 ```

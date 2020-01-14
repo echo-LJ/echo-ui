@@ -1,8 +1,8 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <echo-button></echo-button>
-    <echo-icon></echo-icon>
+    <echo-button>按钮</echo-button>
+    <echo-icon name="spinner2"></echo-icon>
   </div>
 </template>
 
