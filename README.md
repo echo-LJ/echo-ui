@@ -31,7 +31,7 @@ See [项目文档地址](https://lujinggirl.github.io/echo-ui/dist/).
 * git cz > 清楚的选择本次版本所做更改和描述
 * git push 
 
-### 项目引用的步骤
+### 组件库引用的步骤
 
 * 安装
 ```
