@@ -1,8 +1,8 @@
 const path = require('path');
 module.exports = {
   publicPath: process.env.NODE_ENV === 'production'
-    ? '/echo-ui/'
-    : '/',
+    ? '/echo-ui/dist/'
+    : './',
   // 修改 pages 入口
   pages: {
     index: {
