@@ -1,5 +1,29 @@
 const path = require('path');
 module.exports = {
+  // devServer: {
+  //     proxy: {
+  //         '/posts': {    // search为转发路径
+  //             target: 'http://localhost:8082/static/posts',  // 目标地址
+  //             ws: true, // 是否代理websockets
+  //             changeOrigin: true   // 设置同源  默认false，是否需要改变原始主机头为目标URL,               
+  //         }
+  //     }
+  // },
+  configureWebpack: config => {
+    config.module.rules.push({
+      // 处理markdown文件
+      test: /\.md$/,
+      use: [
+        {
+          loader: "vue-loader"
+        },
+        {
+          loader: require.resolve("./examples/markdownLoader")
+        }
+      ],
+    },
+    );
+  },
   publicPath: './',
   // process.env.NODE_ENV === 'production'
   //   ? '/echo-ui/dist/'

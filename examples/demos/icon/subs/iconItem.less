@@ -1,0 +1,21 @@
+@import (reference) "../../../lib/mixins/variables.mixin.less";
+
+@icon-font-size: 1.5em;
+
+.demo-icon-item-container{
+  text-align: center;
+  width: 9.5em;
+  padding-top: 1em;
+  margin: 0.5em 0.5em 0.5em 0;
+  cursor: pointer;
+  &:hover{
+    color: @active-color;
+  }
+}
+
+.demo-icon{
+  font-size: @icon-font-size;
+}
+.demo-icon-label{
+  margin: 1em 0.5em 0.5em;
+}

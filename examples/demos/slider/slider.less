@@ -1,0 +1,27 @@
+@import (reference) "../../lib/mixins/variables.mixin.less";
+
+.slider-demo-container{
+}
+.slider-demo-top{
+  display: flex;
+  height: 200px;
+}
+.slider-demo-right{
+  flex-grow: 4;
+  display: flex;
+  flex-direction: column;
+}
+.slider-demo-item{
+  flex-grow: 1;
+}
+.slider-demo-tools{
+  margin: 0 0 10px;
+}
+.slider-demo-tool{
+  display: flex;
+  align-items: center;
+
+  & + .slider-demo-tool{
+    margin-left: 10px;
+  }
+}

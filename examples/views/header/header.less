@@ -1,0 +1,22 @@
+@import (reference) "../../lib/mixins/variables.mixin.less";
+
+
+@header-padding-top: 10px;
+@header-padding-left: @page-padding-left; 
+
+.page-header{
+  height: @page-header-height;
+  background-color: @white;
+  box-shadow: 0 0 1px @light-shadow-color;
+  box-sizing: border-box;
+  padding: @header-padding-top @header-padding-left;
+  display: flex;
+  justify-content: space-between;
+}
+
+.header-logo-container{
+  height: 100%;
+}
+.header-logo{
+  height: 100%;
+}

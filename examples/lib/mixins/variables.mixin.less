@@ -1,0 +1,131 @@
+@white: #fff;
+@black: #000;
+@gray: #ccc;
+@yellow: #f8e71c;
+@red: #dd4b39;
+@orange: #ffb300;
+@light-red: #ff6b8c;
+@green: #0eec38;
+@light-green: #42b983;
+@dark-green: #00cc4d;
+@purple: #ac9bff;
+@light-blue: #00B4FF;
+@blue: #2d8cf0;
+
+@primary-color-1: #e6f7ff;
+@primary-color-2: #bae7ff;
+@primary-color-3: #91d5ff;
+@primary-color-4: #69c0ff;
+@primary-color-5: #40a9ff;
+@primary-color-6: #1890ff;
+@primary-color-7: #096dd9;
+@primary-color-8: #0050b3;
+@primary-color-9: #003a8c;
+@primary-color-10: #002766;
+
+// gray1-4:字体颜色
+// gray5-8: 边框、分割线、禁用、
+@gray-1: #2E3646;
+@gray-2: #585E6B;
+@gray-3: #828690;
+@gray-4: #CDCFD3;
+@gray-5: #DDDFE1;
+@gray-6: #EAEAEC;
+@gray-7:#F3F3F4;
+@gray-8: #F8F9F9;
+
+@active-color: @primary-color-6;
+@border-color: @gray-5;
+@split-line-color: @gray-6;
+@disable-color: @gray-7;
+@input-bg-color: #F8F9F9;
+@com-border-color: fadeout(@active-color, 80%);
+
+@main-color: @black;
+@success-color: @green;
+@info-color: @light-blue;
+@warning-color: @orange;
+@error-color: @red;
+
+@light-background-color: fadeout(@main-color, 95%);
+@hover-bg-color: fadeout(@active-color, 90%);
+
+// @border-color: fadeout(@main-color, 70%);
+@form-border-color: @border-color;
+@dropdown-border-color: @border-color;
+@divider-color: fadeout(@main-color, 90%);
+
+@title-color: fadeout(@main-color, 25%);
+@text-color: fadeout(@main-color, 40%);
+@text-title-color: fadeout(@main-color, 30%);
+@caption-color: fadeout(@main-color, 57%);
+// @disable-color: fadeout(@main-color, 75%);
+@placeholder-color: fadeout(@main-color, 80%);
+
+@shadow-color: fadeout(@main-color, 50%);
+@light-shadow-color: fadeout(@main-color, 75%);
+@item-box-shadow: 0 0px 3px -1px rgba(0, 0, 0, 0.75);
+@dropdown-shadow-color: hsla(0, 0%, 39%, .2);
+
+@page-background-color: @white;
+
+@page-width: 600px;
+@sidebar-width: 200px;
+
+@page-header-height: 60px;
+
+@page-padding-left: 24px;
+
+@content-padding-top: 5px;
+@content-padding-left: 40px;
+@content-padding-bottom: 30px;
+
+@message-z-index: 299;
+@notice-z-index: 299;
+@page-mask-z-index: 259;
+@page-backdrop-z-index: 249;
+
+@btn-border-radius: 4px;
+@btn-border-radius-small: 3px;
+@btn-disable-color: #bbbec4;
+
+@input-text-color: #495060;
+@input-placeholder-color: #bbbec4;
+@input-height-base: 2em;
+@line-height-base: 2.5;
+@input-height-small: 2em;
+@line-height-small: 2;
+@input-bg-color: @white;
+
+.g-form-disabled-cursor {
+  cursor: not-allowed;
+  pointer-events: none;
+}
+
+.hide-scrollbar {
+  &::-webkit-scrollbar{
+    width: 0px;
+  }
+}
+
+@font-face {font-family: "iconfont";
+  src: url('../theme-chalk/fonts/iconfont.eot?t=1578898953990'); /* IE9 */
+  src: url('../theme-chalk/fonts/iconfont.eot?t=1578898953990#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('data:application/x-font-woff2;charset=utf-8;base64,d09GMgABAAAAAALcAAsAAAAABoAAAAKNAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAHEIGVgCCcAqBCIE0ATYCJAMICwYABCAFhG0HMhvcBciemjwpEhsGCq7JzDYAMfxE8LQfbd7unql0c1QyiXYlkSC2KwE8imfyP1pr84pFoi7WzKS/zP373jnqGmlQaRAaBSjbD1+D8Hzi3umfQIHMB5TbHEu7KMDAsi7QPTBKuA0SesPYBS7hPIFGoyKoDosqGsBTYU0LxEubxQCeuYiisHy9UFuztkS8UaM+vUpfAF6H349/EBeeJDWZ1XT7RaEZcn59tYuyiuc+IUpAm2uQsQwU4n5t5iaNYByNxozWJNhXffDra1X5NrFXs2B/nVXbDIah5J6kruxWaxMocf8KcGdUKamvt+3HIt+R74mPLY/uQn3Grv0aSuJa1UckhvdwH1Yuwrd3Vd2BNc/To8/Fn/nNgbHCO83H5cVgz0Xek+borL2X1Aej1m/LB/dDazqUnayzvHYotKSv5YP9eYnOp27lyR0HlzQZFTqvr73BLkB1USBf/cffaFl9u2T8r28q4Mt+slco6+cD9WfzBn9tUFFB4XIrkwpaagPJyqhUQqMdpwIc6PQ31tBzi65Qn5MyJHVGkNWbJgu7jBpNtlGr3g4aLSne3KQLTyNKAxYNAIR2V0haXSNr900W9hc1ev2jVnto0Ohh+O7ZZDZs3vk8GkQ0E2MLsZmom3HsondUX4cWyWngs/KQ24S8YIuT2KiYYr4Y3cjPsUCQLXGiyBCGpy5SBC5Dp5MSlqd2NIlRVlFk06KjmbobRZmoC7wd4CEDETIjjFoQNiaUG+P3FnmXPl8HWUicDPiWtppoE8QT2IYnYkWJ6UEWa9y92u7lGoHMIo5IxCAYPMqFKAKjkJMTRbD1o+yQiSiKdUSKlSba7sb01UStr3N9QDHrwDKmsEuz+ivW5r5tdxwAAAAA') format('woff2'),
+  url('../theme-chalk/fonts/iconfont.woff?t=1578898953990') format('woff'),
+  url('../theme-chalk/fonts/iconfont.ttf?t=1578898953990') format('truetype'), /* chrome, firefox, opera, Safari, Android, iOS 4.2+ */
+  url('../theme-chalk/fonts/iconfont.svg?t=1578898953990#iconfont') format('svg'); /* iOS 4.1- */
+}
+
+.iconfont {
+  font-family: "iconfont" !important;
+  font-size: 16px;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.echo-iconspinner2:before {
+  content: "\e7e2";
+}
+

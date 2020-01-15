@@ -5,7 +5,7 @@ module.exports = {
   },
   extends: 'plugin:vue/essential',
   rules: {
-    'no-console': 'off', // 禁用console
+    // 'no-console': 'off', // 禁用console
     'no-debugger': 'off', // 禁用debugger
     'space-before-function-paren': 'off', // 强制在function的左括号之前使用一致的空格
     'func-names': 'off', // 要求或禁止使用命名的function表达式

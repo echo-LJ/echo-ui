@@ -1,0 +1,38 @@
+@import (reference) "../../../lib/mixins/variables.mixin.less";
+
+// @description: nav
+// @author: EBo
+// @update: Lujing (2018-04-25)
+@nav-font-size: 16px;
+@nav-item-padding-top: 12px;
+@nav-item-padding-left: 8px;
+@nav-item-margin: 8px;
+@nav-border-width: 3px;
+
+@nav-cls: ~'v-nav';
+.@{nav-cls} {
+  font-size: @nav-font-size;
+
+  &-link{
+    display: block;
+    height: 1em;
+    line-height: 1;
+    padding: @nav-item-padding-top @nav-item-padding-left @nav-item-padding-top - @nav-border-width;
+    text-decoration: none;
+    color: @title-color;
+    border-bottom: @nav-border-width solid transparent;
+    transition: border-color 200ms ease-in-out, color 200ms ease-in-out;
+    &:hover{
+      border-bottom-color: @light-green;
+    }
+    &.router-link-active{
+      color: @light-green;
+      border-bottom-color: @light-green;
+    }
+    & + &{
+      margin-left: @nav-item-margin;
+    }
+  }
+}
+
+

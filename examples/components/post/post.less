@@ -1,0 +1,53 @@
+@import (reference) "../../lib/mixins/variables.mixin.less";
+// @description: post组件
+// @author: EBo
+// @update: Lujing (2018-04-25)
+.post-body{
+  table {
+    font-family: Consolas,Menlo,Courier,monospace;
+    font-size: 12px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    empty-cells: show;
+    border: 1px solid #e9e9e9;
+    width: 100%;
+    margin-bottom: 24px
+  }
+  table th {
+    background: #f7f7f7;
+    white-space: nowrap;
+    color: #5c6b77;
+    font-weight: 600
+  }
+  table th, table td{
+    border: 1px solid #e9e9e9;
+    padding: 8px 16px;
+    text-align: left
+  }
+  table td ul li {
+    font-size: 12px!important
+  }
+}
+
+code {
+  display: inline-block;
+  background: #f7f7f7;
+  font-family: Consolas,Monaco,Andale Mono,Ubuntu Mono,monospace;
+  margin: 0 3px;
+  padding: 1px 5px;
+  border-radius: 3px;
+  color: #666;
+  border: 1px solid #eee;
+}
+
+pre code {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: none;
+  background: transparent
+}
+
+pre.bg code {
+  background: #f7f7f7;
+}
