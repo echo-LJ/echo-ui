@@ -2,6 +2,7 @@ import Vue from 'vue'
 import VueRouter from 'vue-router'
 
 import * as routerNames from './routerNames'
+import config from '../build-config'
 
 // import Home from '../views/Home.vue'
 
@@ -67,10 +68,26 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
   }
 ]
+var historyMode = config.historyMode
 
+function getFixedUrl (url) {
+  return url.slice(0, url.lastIndexOf('/'))
+}
+
+function getRouter (routes, rootUrl) {
+  for (var route of routes) {
+    if (historyMode) {
+      if (route.path.indexOf('/') === 0) {
+        route.path = getFixedUrl(rootUrl) + route.path
+      }
+    }
+  }
+  return routes
+}
 const router = new VueRouter({
-  mode: 'history',
-  routes
+  
+  mode: historyMode ? 'history' : 'hash',
+  routes: getRouter(routes, config.rootUrl)
 })
 
 export default router
